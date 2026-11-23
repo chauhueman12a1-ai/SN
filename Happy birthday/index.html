@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chúc Mừng Sinh Nhật Bé Nhi! 🎂</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-toggle" onclick="toggleMusic()">🔊 Đang phát nhạc</button>
+
+    <!-- Canvas nền vũ trụ sao, pháo hoa & trái tim hạt 3D -->
+    <canvas id="mainCanvas"></canvas>
+
+    <!-- Vòng quay 10 bức ảnh quanh trái tim 3D -->
+    <div id="orbit-stage">
+        <div id="orbit-ring"></div>
+    </div>
+
+    <!-- Không gian mưa chữ 3D dày đặc + trái tim nhỏ -->
+    <div id="space-3d"></div>
+
+    <div class="stage">
+        <!-- Màn hình khởi động -->
+        <div id="start-screen">
+            <button class="start-btn" onclick="startCelebration()">🎁 Bấm vào đây đi bồ tèo Nhi! 🎂</button>
+        </div>
+
+        <!-- Đếm ngược 3 2 1 -->
+        <div id="countdown">3</div>
+
+        <!-- Video em bé chào đời -->
+        <div id="baby-video-scene">
+            <div class="video-frame">
+                <video id="baby-video" playsinline muted>
+                    <source src="assets/baby.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="baby-text">👶 Oa oa oa... Bé Nhi chính thức chào đời rồi đây! ✨</div>
+        </div>
+
+        <!-- Chữ Chúc mừng sinh nhật bồ tèo -->
+        <div id="bo-teo-msg">
+            Chúc mừng sinh nhật bồ tèo Nhi! 😆😂🤣
+        </div>
+
+        <!-- Bánh kem 3 tầng sang xịn -->
+        <div id="cake-scene" onclick="blowCandleAndOpenLetter()">
+            <div class="cake-container">
+                <div class="cake-glow"></div>
+                
+                <div class="candle-group">
+                    <div class="smoke" id="smoke">💨</div>
+                    <div class="flame" id="flame"></div>
+                    <div class="wick"></div>
+                    <div class="candle-body"></div>
+                </div>
+
+                <div class="tier tier-1">
+                    <div class="strawberries">🍓 🍒 🍓</div>
+                    <div class="icing-drip"></div>
+                </div>
+
+                <div class="tier tier-2">
+                    <div class="icing-drip"></div>
+                </div>
+
+                <div class="tier tier-3">
+                    <div class="icing-drip"></div>
+                    <div class="ribbon"></div>
+                </div>
+
+                <div class="cake-stand"></div>
+            </div>
+            <div id="cake-hint">🕯️ Nhắm mắt ước một điều thật đẹp rồi bấm vào bánh để thổi nến nhé! ✨</div>
+        </div>
+    </div>
+
+    <!-- Lá thư lời chúc + Album 10 ảnh -->
+    <div id="letter-modal">
+        <div class="letter-paper">
+            <h2>Gửi bé Nhi siêu cấp đáng yêu! 💌</h2>
+            <p>Chúc mừng sinh nhật bồ tèo nhé! Thêm một tuổi mới, chúc Nhi lúc nào cũng tươi tắn, cười nhiều như được mùa, tiền đầy túi, tình đầy tim và hoàn thành được deadline tự đặt ra.</p>
+            <p>Chúc mừng ngày cậu đến thế giới này. Cảm ơn cậu đã mang lại thật nhiều tiếng cười và năng lượng tích cực giúp tớ hiểu được sự độc lạ của xã hội này. Chúc mọi điều ước lúc nãy thổi nến của cậu đều thành hiện thực 100%!</p>
+            <p>Tuổi mới bùng nổ, rực rỡ và hạnh phúc hết nấc nha! 🥳🎂💖</p>
+           <div class="letter-sign">Mãi zui zẻ nhé bồ tèo! ✨</div>
+
+            <div class="photo-gallery-title">📸 Album kỷ niệm của Nhi 📸</div>
+            <div class="photo-grid" id="photo-grid"></div>
+
+            <button class="close-btn" onclick="closeLetter()">Đóng thư & Ngắm pháo hoa 🎆</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
